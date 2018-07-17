@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import SongList from "./SongList/SongList";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <p className="App-intro">
           This is a song tracklist of Drake's recent album
         </p>
+        <SongList />
       </div>
     );
   }

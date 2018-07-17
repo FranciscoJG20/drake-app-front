@@ -4,7 +4,7 @@ class songlist extends Component {
   render() {
     return (
       <div>
-        <p> I am the tracklist </p>
+        <p> I am the tracklist! </p>
       </div>
     );
   }
