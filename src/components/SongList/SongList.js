@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Song from "../Song/Song";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 class songlist extends Component {
   constructor() {
@@ -20,8 +20,9 @@ class songlist extends Component {
         {this.state.songs[1]}
         <br />
         <br />
-        <Song />
-        <Route path="/song" component={Song} />
+        <Link to="/addsong">Add Song</Link>
+        <br />
+        <Route path="/addsong" component={Song} />
       </div>
     );
   }
