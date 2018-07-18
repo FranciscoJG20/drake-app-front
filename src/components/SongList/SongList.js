@@ -8,7 +8,6 @@ class songlist extends Component {
       <div>
         <p> I am the tracklist! </p>
         <Song />
-        <Link to="/addsong">Add song</Link>
         <Route path="/song" component={Song} />
       </div>
     );
