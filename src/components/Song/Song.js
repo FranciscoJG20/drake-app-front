@@ -4,7 +4,13 @@ class Song extends Component {
   render() {
     return (
       <div>
-        <p> I am one song </p>
+        <form>
+          <label htmlFor="song">Add Song Here</label>
+          <br />
+          <input type="text" placeholder="song name" />
+          <br />
+          <input type="submit" value="submit" />
+        </form>
       </div>
     );
   }
