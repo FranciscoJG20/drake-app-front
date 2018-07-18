@@ -9,12 +9,28 @@ class Song extends Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleNewSong = this.handleNewSong.bind(this);
   }
 
   handleInput(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  handleNewSong(e) {
+    e.preventDefault();
+    const song = {
+      name: this.state.name
+    };
+    axios
+      .post("https://drake-mern.herokuapp.com/api/song")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -26,10 +42,14 @@ class Song extends Component {
           <input
             type="text"
             placeholder="song name"
-            onChange={this.handleInput}
+            onChange={this.props.handleInput}
           />
           <br />
-          <input type="submit" value="submit" />
+          <button
+            type="submit"
+            value="submit"
+            onClick={this.props.handleNewSong}
+          />
         </form>
       </div>
     );
