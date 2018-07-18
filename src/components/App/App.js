@@ -10,7 +10,7 @@ class App extends Component {
           <h1> Scorpion </h1>
         </header>
         <p className="App-intro">
-          This is a song tracklist of Drake's recent album
+          This is a song tracklist of Drake's new album
         </p>
         <SongList />
       </div>
