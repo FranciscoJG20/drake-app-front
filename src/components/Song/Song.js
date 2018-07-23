@@ -25,7 +25,7 @@ class Song extends Component {
       name: this.state.name
     };
     axios
-      .post("https://drake-mern.herokuapp.com/api/song")
+      .post("https://drake-mern.herokuapp.com/api/song", song)
       .then(res => {
         console.log(res);
       })
@@ -43,14 +43,12 @@ class Song extends Component {
           <input
             type="text"
             placeholder="song name"
-            onChange={this.props.handleInput}
+            onChange={this.handleInput}
           />
           <br />
-          <button
-            type="submit"
-            value="submit"
-            onClick={this.props.handleNewSong}
-          />
+          <button type="submit" value="submit" onClick={this.handleNewSong}>
+            Submit
+          </button>
         </form>
       </div>
     );
