@@ -39,8 +39,6 @@ class Song extends Component {
     return (
       <div>
         <form onSubmit={this.handleNewSong}>
-          <label htmlFor="song">Add Song Here</label>
-          <br />
           <input
             type="text"
             placeholder="song name"
