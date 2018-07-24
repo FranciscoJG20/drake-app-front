@@ -1,3 +1,15 @@
 .songName {
   list-style-type: none;
 }
+
+#addSongButton {
+  background-color: black; /* Green */
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
