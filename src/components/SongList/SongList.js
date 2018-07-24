@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Song from "../Song/Song";
 import { Route, Link } from "react-router-dom";
 import axios from "axios";
+import "./SongList.css";
 
 class songlist extends Component {
   constructor() {
@@ -31,7 +32,12 @@ class songlist extends Component {
       <div>
         <h2> Tracklist </h2>
 
-        <Link to="/addsong">Add Song</Link>
+        {this.state.songs.map(song => <li class="songName">{song.name}</li>)}
+        <br />
+
+        <Link to="/addsong" id="addSongButton">
+          Add Song
+        </Link>
         <Route path="/addsong" component={Song} />
       </div>
     );
