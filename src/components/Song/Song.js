@@ -21,11 +21,11 @@ class Song extends Component {
 
   handleNewSong(e) {
     e.preventDefault();
-    const song = {
-      name: this.state.name
-    };
+    console.log(`${this.state.name} is the state for handleNewSong()`);
     axios
-      .post("https://drake-mern.herokuapp.com/api/song", song)
+      .post("https://drake-mern.herokuapp.com/api/song", {
+        name: this.state.name
+      })
       .then(res => {
         console.log(res);
       })
@@ -35,18 +35,20 @@ class Song extends Component {
   }
 
   render() {
+    console.log(this.state.name);
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleNewSong}>
           <label htmlFor="song">Add Song Here</label>
           <br />
           <input
             type="text"
             placeholder="song name"
+            name="name"
             onChange={this.handleInput}
           />
           <br />
-          <button type="submit" value="submit" onClick={this.handleNewSong}>
+          <button type="submit" value="submit">
             Submit
           </button>
         </form>
