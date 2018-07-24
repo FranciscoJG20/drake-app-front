@@ -1,27 +1,37 @@
 import React, { Component } from "react";
 import Song from "../Song/Song";
 import { Route, Link } from "react-router-dom";
+import axios from "axios";
 
 class songlist extends Component {
   constructor() {
     super();
 
     this.state = {
-      songs: ["Emotionless", "Summer Games", "On Your Feelings"]
+      songs: []
     };
   }
+
+  componentDidMount() {
+    axios
+      .get("https://drake-mern.herokuapp.com/api/song")
+      .then(res => {
+        console.log(res);
+        this.setState({
+          songs: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <div>
         <h2> Tracklist </h2>
-        <br />
-        {this.state.songs[0]}
-        <br />
-        {this.state.songs[1]}
-        <br />
-        <br />
+
         <Link to="/addsong">Add Song</Link>
-        <br />
         <Route path="/addsong" component={Song} />
       </div>
     );
