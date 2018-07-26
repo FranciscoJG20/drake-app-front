@@ -21,7 +21,6 @@ class Song extends Component {
 
   handleNewSong(e) {
     e.preventDefault();
-    console.log(`${this.state.name} is the state for handleNewSong()`);
     axios
       .post("https://drake-mern.herokuapp.com/api/song", {
         name: this.state.name
