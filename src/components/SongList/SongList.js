@@ -11,8 +11,20 @@ class songlist extends Component {
     this.state = {
       songs: []
     };
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    axios.delete("https://drake-mern.herokuapp.com/api/song/:id").then(res => {
+      console.log(res);
+      console.log(res.data);
+    });
+  }
+  // send song id to url using axios
+
+  // READ: songs will appear once user refreshes page. Must redirect to homepage
   componentDidMount() {
     axios
       .get("https://drake-mern.herokuapp.com/api/song")
@@ -34,6 +46,9 @@ class songlist extends Component {
 
         {this.state.songs.map(song => (
           <li key={song.id} className="songName">
+            <a href="" onClick={this.handleDelete}>
+              x
+            </a>
             {song.name}
           </li>
         ))}
