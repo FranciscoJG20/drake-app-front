@@ -32,7 +32,11 @@ class songlist extends Component {
       <div>
         <h2> Tracklist </h2>
 
-        {this.state.songs.map(song => <li class="songName">{song.name}</li>)}
+        {this.state.songs.map(song => (
+          <li key={song.id} className="songName">
+            {song.name}
+          </li>
+        ))}
         <br />
 
         <Link to="/addsong" id="addSongButton">
